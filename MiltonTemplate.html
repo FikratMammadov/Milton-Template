@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/19902009fe.js" crossorigin="anonymous"></script>
+    <title>Blog Home</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        body {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /*navbar*/
+
+        .nav-container {
+            background-color: #FFF;
+            padding-top: 40px;
+            padding-right: 50px;
+            padding-left: 50px;
+            width: 30%;
+            float: left;
+            position: fixed;
+            z-index: 500;
+        }
+
+        .header-text a {
+            font-size: 3.6rem;
+            color: #333333;
+            cursor: pointer;
+        }
+
+        .line {
+
+            width: 9rem;
+            margin: 1.6rem 0;
+            border: none;
+            border-bottom: 1px solid #C7C7C7;
+
+        }
+
+        .nav-text {
+            margin: 3rem 0;
+        }
+
+        .nav-text p {
+
+            color: #aaa;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            word-spacing: 0.5px;
+            line-height: 145%;
+            font-weight: 500;
+        }
+
+        .nav-choice {
+            margin: 2rem 0;
+        }
+
+        .nav-choice li {
+            margin-top: 5px;
+        }
+
+        .nav-choice li a {
+            color: #aaa;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            transition: 0.5s;
+
+        }
+
+        .nav-choice li a {
+            color: #aaa;
+
+        }
+
+        .nav-choice li a:hover {
+            color: #333333;
+        }
+
+        .btn-social {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-social li {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-block;
+            font-size: 2rem;
+            margin-left: 0.1rem;
+            color: #aaa;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .btn-social li:hover {
+            color: #333333;
+        }
+
+        .nav-ending {
+            font-size: 1rem;
+            color: #aaa;
+            letter-spacing: 1.2px;
+        }
+
+        .nav-ending a {
+            color: #aaa;
+        }
+
+        .nav-ending a:hover {
+            color: #333333;
+        }
+
+
+        /*home*/
+
+        .home-container {
+            background-color: #F0F0F0;
+            width: 70%;
+            height: 100%;
+            float: right;
+        }
+
+        .home-container .pharagraph {
+            margin: 5rem;
+            border: 1px solid #F0F0F0;
+            border-radius: .7rem;
+            background-color: #fff;
+        }
+
+        .home-container .pharagraph .photo img {
+            border-top-left-radius: .7rem;
+            border-top-right-radius: .7rem;
+            width: 100%;
+            height: 25rem;
+            object-fit: cover;
+        }
+
+        .home-container .pharagraph .photo img:hover {
+            opacity: 0.7;
+        }
+
+        .home-container .pharagraph .description {
+            padding: 3rem;
+        }
+
+        .home-container .pharagraph h2 {
+            color: #333333;
+            font-size: 3rem;
+            font-weight: 400;
+            transition: .5s;
+        }
+
+        .home-container .pharagraph h2:hover {
+            color: #707070;
+        }
+
+        .home-container .pharagraph .description .text-1 {
+            margin-top: 1rem;
+            color: #aaa;
+            font-size: 1.35rem;
+            letter-spacing: .12rem;
+            word-spacing: 0.5px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .home-container .pharagraph .description .text-1 a {
+            text-decoration: underline;
+            color: #aaa;
+            transition: .5s;
+        }
+
+        .home-container .pharagraph .description .text-1 a:hover {
+
+            color: #333333;
+        }
+
+        .home-container .pharagraph .description .year-1 {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+
+        .home-container .pharagraph .description .year-1 a {
+            color: #aaa;
+            transition: .5s;
+        }
+
+        .home-container .pharagraph .description .year-1 a:hover {
+            color: #333333;
+        }
+
+        /*button*/
+
+        .button {
+            float: right;
+            background-color: #F0F0F0;
+            width: 70%;
+            height: 100%;
+            padding-bottom: 5rem;
+        }
+
+        .btn {
+            cursor: pointer;
+            border: 1px solid #F0F0F0;
+            border-radius: .5rem;
+            font-weight: 400;
+            margin-left: 5rem;
+
+            padding: 1.2rem 0.8rem;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #888888;
+            letter-spacing: .12rem;
+            transition: .5s;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+        }
+
+
+        /*Responsive*/
+        @media (max-width:990px) {
+            .home-container .pharagraph {
+                margin: 3rem;
+
+            }
+
+            .nav-container {
+                background-color: #FFF;
+                padding-top: 30px;
+                padding-right: 40px;
+                padding-left: 40px;
+
+            }
+
+
+        }
+
+
+        @media (max-width:766px) {
+
+            /*nav*/
+            .nav-container {
+                background-color: #FFF;
+                padding-top: 20px;
+                padding-right: 25px;
+                padding-left: 25px;
+                width: 100%;
+                z-index: 500;
+                text-align: center;
+                position: relative;
+            }
+
+            .line {
+
+                display: none;
+
+            }
+
+            .nav-choice li {
+                float: left;
+                text-align: center;
+                margin-left: 1.5rem;
+            }
+
+            .nav-choice {
+                margin: .5rem 0;
+                margin-left: 35%;
+
+            }
+
+            .nav-text {
+                margin: 1rem 0;
+            }
+
+            .btn-social {
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+                margin-right: 3rem;
+            }
+
+            .btn-social li {
+                padding: 0 1.5rem;
+
+            }
+
+            .nav-ending {
+                display: none;
+            }
+
+            /*home*/
+            .home-container {
+                background-color: #F0F0F0;
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .home-container .pharagraph {
+                margin: 3rem;
+                border: 1px solid #F0F0F0;
+                border-radius: .7rem;
+                background-color: #fff;
+                object-fit: cover;
+            }
+
+            .home-container .pharagraph .photo img {
+                border-top-left-radius: .7rem;
+                border-top-right-radius: .7rem;
+                width: 100%;
+                height: 20rem;
+                object-fit: cover;
+            }
+
+            .home-container .pharagraph .description {
+                padding: 2rem;
+            }
+
+            .home-container .pharagraph h2 {
+                color: #333333;
+                font-size: 2.7rem;
+                line-height: 1.3;
+                font-weight: 400;
+                transition: .5s;
+            }
+
+            /*button*/
+            .button {
+                text-align: center;
+                background-color: #F0F0F0;
+                width: 100%;
+                height: 100%;
+                padding-top: 2rem;
+                padding-bottom: 4rem;
+                padding-right: 2rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container clearfix">
+            <div class="header-text"><a>Milton</a></div>
+            <hr class="line">
+            <div class="nav-text">
+                <p>
+                    Denali is a simple responsive blog template. Easily add new posts using the Editor or change layout
+                    and design using the Designer.
+                </p>
+            </div>
+            <hr class="line">
+            <ul class="nav-choice text-uppercase clearfix">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <hr class="line">
+
+
+            <ul class="btn-social clearfix">
+                <li>
+                    <i class="fab fa-facebook-square"></i>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fab fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fab fa-linkedin-in"></i>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                </li>
+            </ul>
+            <p class="nav-ending text-uppercase">
+                Built with <a href="">Webflow</a>
+            </p>
+        </div>
+    </nav>
+
+    <section>
+        <div class="home-container">
+            <div class="pharagraph">
+                <a href="" class="photo"><img src="https://neilpatel.com/wp-content/uploads/2018/10/blog.jpg"
+                        alt=""></a>
+                <div class="description">
+
+                    <div>
+                        <a href="">
+                            <h2 class="header-1">Coffee sugar, chicory seasonal espresso barista americano</h2>
+                        </a>
+
+                        <p class="text-1">Arista, percolator, cream, aromatic, fair trade, breve body instant lungo blue
+                            mountain cappuccino. Americano aroma mug espresso latte crema milk redeye acerbic. Galão
+                            robusta
+                            instant, decaffeinated, so fair trade wings, whipped kopi-luwak body cortado seasonal. Mug
+                            roast, café au lait affogato lungo viennese decaffeinated. Cultivar, redeye brewed seasonal,
+                            java as french press et sweet cup mazagran. <a href="">Read more...</a></p>
+                        <p class="year-1 text-uppercase">September 8 , 2016 |<a href=""> Music</a></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="home-container">
+            <div class="pharagraph">
+                <a href="" class="photo"><img
+                        src="https://ahvalnews.com/sites/default/files/styles/is_article_featured_top_1200x550/public/2018-02/cappadocia-765498.jpg?h=a1e1a043&itok=Rx13-MTR"
+                        alt=""></a>
+                <div class="description">
+
+                    <div>
+                        <a href="">
+                            <h2 class="header-1">Coffee variety macchiato, as organic ut variety caffeine americano</h2>
+                        </a>
+
+                        <p class="text-1">Saucer, crema carajillo, bar, mocha medium, latte cappuccino and espresso
+                            acerbic to go. Coffee, irish foam turkish coffee blue mountain seasonal. Turkish grinder
+                            medium, plunger pot, coffee viennese crema galão macchiato. Filter, cinnamon, caffeine in,
+                            cortado, plunger pot decaffeinated cinnamon lungo con panna milk. <a href="">Read
+                                more...</a></p>
+                        <p class="year-1 text-uppercase">September 8 , 2016 |<a href=""> Travel</a></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="home-container">
+            <div class="pharagraph">
+                <a href="" class="photo"><img
+                        src="https://ucdn.tatilbudur.net/tur/gunubirlik-abant-golcuk-turu/855x426/150710.jpg"
+                        alt=""></a>
+                <div class="description">
+
+                    <div>
+                        <a href="">
+                            <h2 class="header-1">Overlaid the jeepers uselessly much excluding</h2>
+                        </a>
+
+                        <p class="text-1">Saucer dark cup french press. Barista beans, organic eu variety skinny acerbic
+                            flavour caffeine white. Steamed, plunger pot ut dripper decaffeinated, caramelization, sit
+                            barista mug con panna shop turkish. <a href="">Read more...</a></p>
+                        <p class="year-1 text-uppercase">September 8 , 2016 |<a href=""> Tech</a></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="home-container">
+            <div class="pharagraph">
+                <a href="" class="photo"><img
+                        src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                        alt=""></a>
+                <div class="description">
+
+                    <div>
+                        <a href="">
+                            <h2 class="header-1">According a funnily until pre-set or arrogant well cheerful</h2>
+                        </a>
+
+                        <p class="text-1">Single shot cultivar beans as chicory caffeine. Medium brewed, milk extra that
+                            froth pumpkin spice mocha. Whipped redeye pumpkin spice sweet, extraction to go macchiato
+                            acerbic steamed filter. Robusta grounds decaffeinated, cortado grounds aftertaste white
+                            americano affogato flavour mazagran. Aged eu, extraction, cup seasonal frappuccino in
+                            seasonal saucer wings. <a href="">Read more...</a></p>
+                        <p class="year-1 text-uppercase">September 8 , 2016 |<a href=""> Music</a></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="home-container">
+            <div class="pharagraph">
+                <a href="" class="photo"><img
+                        src="https://content.unops.org/photos/News-and-Stories/Features/_image2880x1400/Sri-Lanka_Nilwella-Harbour_IFAD_John-Rae_201787A1748.jpg?mtime=20181122122950"
+                        alt=""></a>
+                <div class="description">
+
+                    <div>
+                        <a href="">
+                            <h2 class="header-1">Wherever far wow thus a squirrel raccoon jeez jaguar this from along
+                            </h2>
+                        </a>
+
+                        <p class="text-1">Cup, caramelization viennese, cultivar macchiato flavour percolator ristretto
+                            frappuccino. Lungo extra macchiato cream chicory turkish caramelization. <a href="">Read
+                                more...</a></p>
+                        <p class="year-1 text-uppercase">September 8 , 2016 |<a href=""> Music</a></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <div class="button">
+
+        <a href="#" class="btn">All Posts <i class="fas fa-arrow-right"></i></a>
+
+    </div>
+</body>
+
+</html>
